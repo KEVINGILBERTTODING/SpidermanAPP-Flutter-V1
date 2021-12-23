@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'listmovie.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -56,19 +58,15 @@ class MyApp extends StatelessWidget {
                     fontSize: 10, fontFamily: 'Locomotype', color: Colors.red),
               ),
             ),
-            Container(
-              child: TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                      backgroundColor: Colors.red[900],
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0))),
-                  child: Text(
-                    'Get Started',
-                    style: TextStyle(
-                        color: Colors.white, fontSize: 11, fontFamily: 'sfpro'),
-                  )),
-            )
+            Builder(
+                builder: (context) => TextButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => ListMovie()));
+                    },
+                    child: Text(
+                      'Klik ini',
+                    )))
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
